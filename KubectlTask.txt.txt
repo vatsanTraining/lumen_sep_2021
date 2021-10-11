@@ -1,0 +1,27 @@
+Task -I   Creating Docker Container
+
+1.Create a spring book Rest Service
+2.Edit the Pom.xml file add a file name
+3.Use maven goal and package the application
+4. Add a Dockerfile in the context path
+5. Navigate to the commandLine client where Dockerfile is located
+6. Create a Docker Build with the following  command 
+7. docker build --tag vatsank/credit-card-service:2.0 .
+7. Push the image to dockerhub with the following command  
+8. docker push vatsank/credit-card-service:2.0
+9. Execute the dockerimage using following command
+10 docker run -it -p9595:9595 vatsank/credit-card-service:2.0
+11. Test the application running by using following curl command
+12.  curl -v http://localhost:9595/cards/884
+13. curl -v http://localhost:9595/cards/984
+
+Task -2 Deploy to Kubernetes
+
+1. kubectl create deployment card-service-demo --image=vatsank/credit-card-service:2.0
+2. kubectl get deployments
+3. kubectl expose deployment card-service-demo --type=LoadBalancer --name=partner --port=9595
+4. Invoke curl -v http://localhost:9595/cards/884 and check the output
+5. Open with the browser type the same url and check 
+
+
+
